@@ -20,8 +20,8 @@
                 
             </div>    
             <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
-              <div *ngIf="price.errors.required">Price is required</div>
-              <div *ngIf="price.errors?.min">Price must be greater than 0</div>
+              <div *ngIf="price?.errors.required">Price is required</div>
+              <div *ngIf="price?.errors?.min">Price must be greater than 0</div>
                 
             </div>
           </div>
@@ -37,10 +37,10 @@
           </div>
           <div class="form-group">
             <label for="imageUrl">imageURL</label>
-            <input #imageUrl="ngModel"  [(ngModel)]="product.imageUrl" name="imageURL" id="imageUrl" type="text" class="form-control" required url>
+            <input #imageUrl="ngModel"  [(ngModel)]="product.imageUrl" name="imageUrl" id="imageUrl" type="text" class="form-control" required url>
             <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
-              <div *ngIf="imageUrl.errors.required">imageUrl is required</div>
-              <div *ngIf="imageUrl.errors.url">Please Enter a valid URL</div>        
+              <div *ngIf="imageUrl?.errors.required">imageUrl is required</div>
+              <div *ngIf="imageUrl?.errors.url">Please Enter a valid URL</div>        
             </div>
           </div>
         
