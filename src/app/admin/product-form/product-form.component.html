@@ -36,11 +36,11 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="imageURL">imageURL</label>
-            <input #imageURL="ngModel"  [(ngModel)]="product.imageURL" name="imageURL" id="imageURL" type="text" class="form-control" required url>
-            <div class="alert alert-danger" *ngIf="imageURL.touched && imageURL.invalid">
-              <div *ngIf="imageURL.errors.required">imageURL is required</div>
-              <div *ngIf="imageURL.errors.url">Please Enter a valid URL</div>        
+            <label for="imageUrl">imageURL</label>
+            <input #imageUrl="ngModel"  [(ngModel)]="product.imageUrl" name="imageURL" id="imageUrl" type="text" class="form-control" required url>
+            <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
+              <div *ngIf="imageUrl.errors.required">imageUrl is required</div>
+              <div *ngIf="imageUrl.errors.url">Please Enter a valid URL</div>        
             </div>
           </div>
         
@@ -49,8 +49,8 @@
         </form>
   </div>
   <div class="col-md-6">
-      <div class="card" style="width: 20rem;">
-          <img class="card-img-top" [src]="product.imageURL" *ngIf= "product.imageURL">
+      <div *ngIf="product.title" class="card" style="width: 20rem;">
+          <img class="card-img-top" [src]="product.imageUrl" *ngIf= "product.imageUrl">
           <div class="card-block">
             <h4 class="card-title">{{product.title}}</h4>
             <p class="card-text">{{product.price | currency: 'USD': true }}</p>
